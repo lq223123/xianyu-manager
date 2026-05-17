@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: xianyu-manager-api
+    runtime: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
